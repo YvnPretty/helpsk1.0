@@ -1,6 +1,6 @@
 <?php
 
-require_once "../../clases/usuarios.php";
+require_once "../../../clases/usuarios.php";
 
 $usuario = $_POST['usuario'];
 $password = $_POST['password'];

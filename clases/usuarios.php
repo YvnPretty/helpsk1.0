@@ -1,6 +1,6 @@
 <?php
 
-require_once "conexion.php";
+require_once __DIR__ . "/conexion.php";
 
 class Usuarios extends Conexion {
     public function loginUsuario($usuario, $password) {
