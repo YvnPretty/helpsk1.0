@@ -1,0 +1,39 @@
+/* Estilos específicos para la plantilla del sistema (Capítulo 2) */
+
+body {
+    background: url('../public/img/bg-mountain.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: #f1f3f5;
+}
+
+#nav-helpdesk {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content-page {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 5px;
+    min-height: 200px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #6c757d !important;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: #3498db !important;
+}
+
+.navbar-brand {
+    color: #2980b9 !important;
+    font-weight: 500;
+}
