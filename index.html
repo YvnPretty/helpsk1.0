@@ -2,16 +2,130 @@
 <html lang="es">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login de usuario</title>
+    <title>Login de usuario</title>
 
+    <!-- Usaremos CDN temporalmente para que veas el diseño igual al del video rápido -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f1f3f5;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 350px;
+            padding: 40px 30px;
+            border-radius: 5px;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .login-card img {
+            width: 120px;
+            margin-bottom: 5px;
+        }
+
+        .login-card h3 {
+            color: #2980b9;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .form-control {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 0;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .btn-login {
+            background-color: #63b1f5;
+            border: none;
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: #3498db;
+        }
+
+        .contact-link {
+            display: block;
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #6ec0ff;
+        }
+
+        .contact-link:hover {
+            color: #3498db;
+        }
+    </style>
 </head>
 
 <body>
 
+    <div class="login-card">
+        <!-- Logo simulado -->
+        <img src="https://via.placeholder.com/120x80.png?text=Logo+HelpDesk" alt="Logo Help-Desk">
+
+        <h3>Help-Desk</h3>
+
+        <form action="#" method="POST">
+            <input type="text" class="form-control" name="username" placeholder="username" required>
+            <input type="password" class="form-control" name="password" placeholder="password" required>
+            <button type="submit" class="btn btn-primary btn-login">ENTRAR</button>
+        </form>
+
+        <a href="#" class="contact-link" data-toggle="modal" data-target="#contactoModal">Contactar con el
+            administrador</a>
+    </div>
+
+    <!-- Modal de Contacto -->
+    <div class="modal fade" id="contactoModal" tabindex="-1" role="dialog" aria-labelledby="contactoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactoModalLabel">Contacto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-left">
+                    Si no tienes una credencial llama al: <strong>5583966633</strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
