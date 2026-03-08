@@ -11,7 +11,6 @@
             <th>Usuario</th>
             <th>Ubicacion</th>
             <th>Reset Password</th>
-            <th>Cambiar Rol</th>
             <th>Activar</th>
             <th>Editar</th>
             <th>Eliminar</th>
@@ -35,16 +34,11 @@
             </td>
             <td>
                 <button class="btn btn-sm btn-info">
-                    Cambiar Rol
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-info">
                     Activo
                 </button>
             </td>
             <td>
-                <button class="btn btn-sm btn-warning">
+                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios">
                     Editar
                 </button>
             </td>
@@ -71,16 +65,11 @@
             </td>
             <td>
                 <button class="btn btn-sm btn-info">
-                    Cambiar Rol
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-info">
                     Activo
                 </button>
             </td>
             <td>
-                <button class="btn btn-sm btn-warning">
+                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios">
                     Editar
                 </button>
             </td>

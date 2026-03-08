@@ -16,6 +16,7 @@
 
 <?php 
     include "usuarios/modalAgregar.php";
+    include "usuarios/modalActualizar.php";
     include "footer.php"; 
 ?>
 <script src="../public/js/usuarios/usuarios.js"></script>
