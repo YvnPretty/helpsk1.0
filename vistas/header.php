@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,6 +30,9 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="inicio.php">Inicio</a>
                 </li>
+                
+                <?php if(isset($_SESSION['rol_usuario']) && $_SESSION['rol_usuario'] == 1) { ?>
+                <!-- Menú del Administrador -->
                 <li class="nav-item">
                     <a class="nav-link" href="usuarios.php">Usuarios</a>
                 </li>
@@ -38,8 +42,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="reportes.php">Reportes</a>
                 </li>
+
+                <?php } else if(isset($_SESSION['rol_usuario']) && $_SESSION['rol_usuario'] == 2) { ?>
+                <!-- Menú del Cliente -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: red;">Usuario: admin</a>
+                    <a class="nav-link" href="misDispositivos.php">Mis dispositivos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="misReportes.php">Reportes Soporte</a>
+                </li>
+                <?php } ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: red;">Usuario: <?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : 'Invitado'; ?></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../procesos/usuarios/login/salir.php">Salir</a>
                 </li>
             </ul>
         </div>
