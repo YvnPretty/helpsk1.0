@@ -25,6 +25,57 @@ class Usuarios extends Conexion {
             return 0; // Credenciales incorrectas
         }
     }
+
+    public function actualizarUsuario($datos) {
+        $conexion = Conexion::conectar();
+
+        // Actualizamos primero los datos personales
+        $sqlPersona = "UPDATE t_persona SET 
+                        paterno = ?, 
+                        materno = ?, 
+                        nombre = ?, 
+                        fecha_nacimiento = ?, 
+                        sexo = ?, 
+                        telefono = ?, 
+                        correo = ? 
+                       WHERE id_persona = ?";
+        
+        $queryPersona = $conexion->prepare($sqlPersona);
+        $queryPersona->bind_param("ssssssss", 
+                                    $datos['paterno'],
+                                    $datos['materno'],
+                                    $datos['nombre'],
+                                    $datos['fechaNacimiento'],
+                                    $datos['sexo'],
+                                    $datos['telefono'],
+                                    $datos['correo'],
+                                    $datos['idPersona']);
+        $respuestaPersona = $queryPersona->execute();
+
+        // Actualizamos los datos del usuario (login)
+        $sqlUsuario = "UPDATE t_usuarios SET 
+                        id_rol = ?, 
+                        usuario = ?, 
+                        ubicacion = ? 
+                       WHERE id_usuario = ?";
+        
+        $queryUsuario = $conexion->prepare($sqlUsuario);
+        $queryUsuario->bind_param("issi", 
+                                    $datos['idRol'],
+                                    $datos['usuario'],
+                                    $datos['ubicacion'],
+                                    $datos['idUsuario']);
+        $respuestaUsuario = $queryUsuario->execute();
+
+        $queryPersona->close();
+        $queryUsuario->close();
+
+        if ($respuestaPersona && $respuestaUsuario) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }
 
 ?>
