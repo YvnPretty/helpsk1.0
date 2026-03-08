@@ -25,17 +25,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
                     <a class="nav-link" href="inicio.php">Inicio</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="misDispositivos.php">Mis dispositivos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="misReportes.php">Reportes Soporte</a>
-                </li>
-                <!-- DE aqui son las vistas del administrador -->
                 <li class="nav-item">
                     <a class="nav-link" href="usuarios.php">Usuarios</a>
                 </li>
@@ -44,6 +37,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="reportes.php">Reportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: red;">Usuario: admin</a>
                 </li>
             </ul>
         </div>
