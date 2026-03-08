@@ -5,11 +5,11 @@
             <th>Apellido materno</th>
             <th>Nombre</th>
             <th>Edad</th>
-            <th>Sexo</th>
             <th>Telefono</th>
             <th>Correo</th>
             <th>Usuario</th>
             <th>Ubicacion</th>
+            <th>Sexo</th>
             <th>Reset Password</th>
             <th>Activar</th>
             <th>Editar</th>
@@ -22,11 +22,11 @@
             <td>desk</td>
             <td>demo</td>
             <td>2021-08-09</td> <!-- Esta sería la edad, pero en la captura muestra fecha directa por ahora -->
-            <td>M</td>
             <td>56895623</td>
             <td>helpdesk@gmail.com</td>
             <td>admin</td>
             <td>Modulo 1</td>
+            <td>M</td>
             <td>
                 <button class="btn btn-sm btn-success">
                     Cambiar password
@@ -53,11 +53,11 @@
             <td>desk</td>
             <td>demo</td>
             <td>2021-08-09</td>
-            <td>M</td>
             <td>56895623</td>
             <td>helpdesk@gmail.com</td>
             <td>cliente</td>
             <td>Modulo 1</td>
+            <td>M</td>
             <td>
                 <button class="btn btn-sm btn-success">
                     Cambiar password
