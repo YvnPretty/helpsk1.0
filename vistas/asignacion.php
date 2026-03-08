@@ -1,7 +1,26 @@
 <?php include "header.php"; ?>
 
 <h2 class="mt-4">Asignación de Dispositivos</h2>
-<p class="text-muted">Asigna equipos de cómputo y periféricos a los trabajadores.</p>
 <hr>
 
-<?php include "footer.php"; ?>
+<div class="row">
+    <div class="col-sm-12">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modalAsignarEquipo">
+            Asignar equipo
+        </button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive" id="tablaAsignaciones">
+            <!-- La tabla de hardware se carga aquí mediante asigacion.js -->
+        </div>
+    </div>
+</div>
+
+<?php 
+    include "asignacion/modalAsignar.php";
+    include "footer.php"; 
+?>
+<script src="../public/js/asignacion/asignacion.js"></script>
