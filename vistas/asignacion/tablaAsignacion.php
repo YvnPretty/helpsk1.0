@@ -31,7 +31,7 @@
                 </button>
             </td>
             <td>
-                <button class="btn btn-sm btn-danger">
+                <button class="btn btn-sm btn-danger" onclick="eliminarAsignacion(1)">
                     Eliminar
                 </button>
             </td>
