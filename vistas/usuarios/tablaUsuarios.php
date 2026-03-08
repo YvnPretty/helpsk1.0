@@ -9,9 +9,10 @@
             <th>Telefono</th>
             <th>Correo</th>
             <th>Usuario</th>
+            <th>Ubicacion</th>
             <th>Reset Password</th>
             <th>Cambiar Rol</th>
-            <th>Ubicacion</th>
+            <th>Activar</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -26,6 +27,7 @@
             <td>56895623</td>
             <td>helpdesk@gmail.com</td>
             <td>admin</td>
+            <td>Modulo 1</td>
             <td>
                 <button class="btn btn-sm btn-success">
                     Cambiar password
@@ -36,7 +38,11 @@
                     Cambiar Rol
                 </button>
             </td>
-            <td>Modulo 1</td>
+            <td>
+                <button class="btn btn-sm btn-info">
+                    Activo
+                </button>
+            </td>
             <td>
                 <button class="btn btn-sm btn-warning">
                     Editar
@@ -57,6 +63,7 @@
             <td>56895623</td>
             <td>helpdesk@gmail.com</td>
             <td>cliente</td>
+            <td>Modulo 1</td>
             <td>
                 <button class="btn btn-sm btn-success">
                     Cambiar password
@@ -67,7 +74,11 @@
                     Cambiar Rol
                 </button>
             </td>
-            <td>Modulo 1</td>
+            <td>
+                <button class="btn btn-sm btn-info">
+                    Activo
+                </button>
+            </td>
             <td>
                 <button class="btn btn-sm btn-warning">
                     Editar
