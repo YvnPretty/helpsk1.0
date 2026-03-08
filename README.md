@@ -30,4 +30,8 @@ Inicio de sesión.
 // Tecnologías a utilizar
 **Backend:** PHP
 **Frontend:** HTML5, CSS3, Bootstrap 4, jQuery
-**Base de Datos:** MySQL
+**Base de Datos:** MariaDB/MySQL
+
+// Diagrama de Base de Datos
+Puedes consultar el modelo relacional (ER) del sistema en el archivo [DIAGRAMA_ER.md](DIAGRAMA_ER.md).
+

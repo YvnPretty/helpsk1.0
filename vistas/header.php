@@ -10,8 +10,10 @@
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../public/sweetalert2/sweetalert2.min.css">
     
-    <!-- Usamos CDN para FontAwesome -->
+    <!-- Usamos CDN para FontAwesome y DataTables -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
     
     <!-- Estilos de Plantilla Base según captura del video -->
     <link rel="stylesheet" href="plantilla.css">

@@ -1,7 +1,7 @@
 <?php
 
 class Conexion {
-    public function conectar() {
+    public static function conectar() {
         $servidor = "localhost";
         $usuario = "root"; // Reemplaza con tu usuario de MySQL
         $password = "";     // Reemplaza con tu contraseña de MySQL

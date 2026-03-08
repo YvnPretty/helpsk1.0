@@ -1,7 +1,6 @@
-CREATE DATABASE IF NOT EXISTS helpdesk_db;
-USE helpdesk_db;
-
--- 1. Tabla de Personas (información personal)
+DROP DATABASE IF EXISTS helpdesk_db;
+CREATE DATABASE helpdesk_db;
+USE helpdesk_db;-- 1. Tabla de Personas (información personal)
 CREATE TABLE t_persona (
     id_persona INT AUTO_INCREMENT PRIMARY KEY,
     paterno VARCHAR(255) NOT NULL,
