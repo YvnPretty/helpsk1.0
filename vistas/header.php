@@ -20,13 +20,15 @@
     <link rel="stylesheet" href="plantilla.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-helpdesk">
-        <a class="navbar-brand" href="#">Help - Desk</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center" id="nav-helpdesk">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item">
+                    <a class="navbar-brand" href="inicio.php">Help - Desk</a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="inicio.php">Inicio</a>
                 </li>
@@ -53,11 +55,15 @@
                 </li>
                 <?php } ?>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: red;">Usuario: <?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : 'Invitado'; ?></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../procesos/usuarios/login/salir.php">Salir</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUsuario" role="button" data-toggle="dropdown" aria-expanded="false" style="color: red;">
+                        Usuario: <?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : 'Invitado'; ?>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUsuario">
+                        <a class="dropdown-item" href="../procesos/usuarios/login/salir.php">
+                            <i class="fas fa-sign-out-alt"></i> Salir
+                        </a>
+                    </div>
                 </li>
             </ul>
         </div>

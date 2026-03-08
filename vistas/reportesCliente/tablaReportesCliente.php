@@ -1,4 +1,4 @@
-<table class="table table-sm table-bordered dt-responsive nowrap" id="tablaReportesAdminDataTable" style="width:100%">
+<table class="table table-sm table-bordered dt-responsive nowrap" id="tablaReportesClienteDataTable" style="width:100%">
     <thead>
         <tr>
             <th>#</th>
@@ -7,6 +7,7 @@
             <th>Fecha</th>
             <th>Descripcion</th>
             <th>Estatus</th>
+            <!-- Las columnas de abajo las podemos ocultar u organizar para que DataTables las mande debajo al expandir -->
             <th class="none">Solucion</th>
             <th class="none">Eliminar</th>
         </tr>
@@ -18,15 +19,10 @@
             <td>Laptop</td>
             <td>2021-08-13 14:17:22</td>
             <td>Mi laptop se calienta mucho y se apaga despues</td>
-            <td><span class="badge badge-success">Cerrado</span></td>
+            <td><span class="badge badge-success">Abierto</span></td>
+            <td><span class="bg-primary text-white px-2 py-1 rounded d-inline-block">Vamos a cambiar pasta termica y limpiar el equipo</span></td>
             <td>
-                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modalAgregarSolucion" onclick="obtenerDatosSolucion(1)">
-                    Solucion
-                </button>
-                Vamos a cambiar pasta termica y limpiar el equipo, se entrego exitosamente al cliente.
-            </td>
-            <td>
-                <button class="btn btn-danger btn-sm" onclick="eliminarReporteAdmin(1)">
+                <button class="btn btn-primary btn-sm">
                     Eliminar
                 </button>
             </td>
@@ -36,7 +32,7 @@
 
 <script>
     $(document).ready(function() {
-        $('#tablaReportesAdminDataTable').DataTable({
+        $('#tablaReportesClienteDataTable').DataTable({
             responsive: true,
             lengthMenu: [10, 25, 50, 100],
             pageLength: 10

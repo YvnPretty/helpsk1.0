@@ -1,7 +1,15 @@
 <?php include "header.php"; ?>
 
-<h2 class="mt-4">Reportes de Soporte</h2>
-<p class="text-muted">Historial y estado de tus tickets de soporte levantados.</p>
-<hr>
+<div class="card mt-4">
+    <div class="card-body">
+        <h2 class="card-title">Reportes de cliente</h2>
+        <button class="btn btn-primary mb-3" >Crear Reporte</button>
+
+        <div class="table-responsive" id="tablaReportesClienteLoad">
+            <!-- La tabla general de reportes (cliente) carga acá -->
+        </div>
+    </div>
+</div>
 
 <?php include "footer.php"; ?>
+<script src="../public/js/reportesCliente/reportesCliente.js"></script>
