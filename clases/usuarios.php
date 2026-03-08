@@ -26,6 +26,55 @@ class Usuarios extends Conexion {
         }
     }
 
+    public function agregarNuevoUsuario($datos) {
+        $conexion = Conexion::conectar();
+        
+        // Iniciamos transacción porque necesitamos insertar en 2 tablas relacionadas
+        mysqli_begin_transaction($conexion);
+
+        try {
+            $sqlPersona = "INSERT INTO t_persona (paterno, materno, nombre, fecha_nacimiento, sexo, telefono, correo) 
+                           VALUES (?, ?, ?, ?, ?, ?, ?)";
+            
+            $queryPersona = $conexion->prepare($sqlPersona);
+            $queryPersona->bind_param("sssssss", 
+                                        $datos['paterno'],
+                                        $datos['materno'],
+                                        $datos['nombre'],
+                                        $datos['fechaNacimiento'],
+                                        $datos['sexo'],
+                                        $datos['telefono'],
+                                        $datos['correo']);
+            $queryPersona->execute();
+            
+            // Obtenemos el ID de la persona que acabamos de insertar
+            $idPersona = mysqli_insert_id($conexion);
+            
+            $sqlUsuario = "INSERT INTO t_usuarios (id_rol, id_persona, usuario, password, ubicacion) 
+                           VALUES (?, ?, ?, ?, ?)";
+            
+            $queryUsuario = $conexion->prepare($sqlUsuario);
+            $queryUsuario->bind_param("iisss", 
+                                        $datos['idRol'],
+                                        $idPersona,
+                                        $datos['usuario'],
+                                        $datos['password'],
+                                        $datos['ubicacion']);
+            $queryUsuario->execute();
+
+            $queryPersona->close();
+            $queryUsuario->close();
+
+            // Si todo salió bien, confirmamos los cambios
+            mysqli_commit($conexion);
+            return 1;
+        } catch (Exception $e) {
+            // Si hubo algún error (ej. usuario duplicado), revertimos todo
+            mysqli_rollback($conexion);
+            return 0;
+        }
+    }
+
     public function actualizarUsuario($datos) {
         $conexion = Conexion::conectar();
 
