@@ -10,10 +10,10 @@
             <th>Usuario</th>
             <th>Ubicacion</th>
             <th>Sexo</th>
-            <th>Reset Password</th>
-            <th>Activar</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
+            <th class="none">Reset Password</th>
+            <th class="none">Activar</th>
+            <th class="none">Editar</th>
+            <th class="none">Eliminar</th>
         </tr>
     </thead>
     <tbody>
