@@ -39,6 +39,40 @@ class Asignacion extends Conexion {
         
         return $respuesta ? 1 : 0;
     }
+
+    public function editaAsignacion($datos) {
+        $conexion = Conexion::conectar();
+        
+        $sql = "UPDATE t_dispositivos SET 
+                    id_persona = ?, 
+                    tipo = ?, 
+                    marca = ?, 
+                    modelo = ?, 
+                    color = ?, 
+                    descripcion = ?, 
+                    memoria = ?, 
+                    disco_duro = ?, 
+                    procesador = ? 
+                WHERE id_dispositivo = ?";
+        
+        $query = $conexion->prepare($sql);
+        $query->bind_param("issssssssi", 
+                            $datos['idPersona'],
+                            $datos['idTipoEquipo'],
+                            $datos['marca'],
+                            $datos['modelo'],
+                            $datos['color'],
+                            $datos['descripcion'],
+                            $datos['memoria'],
+                            $datos['discoDuro'],
+                            $datos['procesador'],
+                            $datos['idAsignacion']);
+        
+        $respuesta = $query->execute();
+        $query->close();
+        
+        return $respuesta ? 1 : 0;
+    }
 }
 
 ?>

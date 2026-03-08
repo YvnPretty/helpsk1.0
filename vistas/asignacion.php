@@ -21,6 +21,7 @@
 
 <?php 
     include "asignacion/modalAsignar.php";
+    include "asignacion/modalReasignar.php";
     include "footer.php"; 
 ?>
 <script src="../public/js/asignacion/asignacion.js"></script>

@@ -26,7 +26,7 @@
             <td>Core i5 8va Gen</td>
             <td>Equipo nuevo para el admin</td>
             <td>
-                <button class="btn btn-sm btn-warning">
+                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalReasignarEquipo" onclick="obtenerDatosAsignacion(1)">
                     Reasignar
                 </button>
             </td>
