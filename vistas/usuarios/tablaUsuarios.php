@@ -14,19 +14,38 @@
             <th class="none">Activar</th>
             <th class="none">Editar</th>
             <th class="none">Eliminar</th>
-        </tr>
-    </thead>
     <tbody>
+        <?php
+        require_once "../../clases/conexion.php";
+        $conexion = Conexion::conectar();
+        
+        $sql = "SELECT 
+                    p.paterno, 
+                    p.materno, 
+                    p.nombre, 
+                    p.fecha_nacimiento, 
+                    p.telefono, 
+                    p.correo, 
+                    u.usuario, 
+                    u.ubicacion, 
+                    p.sexo,
+                    u.id_usuario 
+                FROM t_usuarios u 
+                INNER JOIN t_persona p ON u.id_persona = p.id_persona";
+        
+        $result = mysqli_query($conexion, $sql);
+        while ($mostrar = mysqli_fetch_array($result)) {
+        ?>
         <tr>
-            <td>help</td>
-            <td>desk</td>
-            <td>demo</td>
-            <td>2021-08-09</td> <!-- Esta sería la edad, pero en la captura muestra fecha directa por ahora -->
-            <td>56895623</td>
-            <td>helpdesk@gmail.com</td>
-            <td>admin</td>
-            <td>Modulo 1</td>
-            <td>M</td>
+            <td><?php echo $mostrar['paterno']; ?></td>
+            <td><?php echo $mostrar['materno']; ?></td>
+            <td><?php echo $mostrar['nombre']; ?></td>
+            <td><?php echo $mostrar['fecha_nacimiento']; ?></td>
+            <td><?php echo $mostrar['telefono']; ?></td>
+            <td><?php echo $mostrar['correo']; ?></td>
+            <td><?php echo $mostrar['usuario']; ?></td>
+            <td><?php echo $mostrar['ubicacion']; ?></td>
+            <td><?php echo $mostrar['sexo']; ?></td>
             <td>
                 <button class="btn btn-sm btn-success">
                     Cambiar password
@@ -48,37 +67,7 @@
                 </button>
             </td>
         </tr>
-        <tr>
-            <td>help</td>
-            <td>desk</td>
-            <td>demo</td>
-            <td>2021-08-09</td>
-            <td>56895623</td>
-            <td>helpdesk@gmail.com</td>
-            <td>cliente</td>
-            <td>Modulo 1</td>
-            <td>M</td>
-            <td>
-                <button class="btn btn-sm btn-success">
-                    Cambiar password
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-info">
-                    Activo
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios">
-                    Editar
-                </button>
-            </td>
-            <td>
-                <button class="btn btn-sm btn-danger">
-                    Eliminar
-                </button>
-            </td>
-        </tr>
+        <?php } ?>
     </tbody>
 </table>
 
