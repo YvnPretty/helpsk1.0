@@ -47,8 +47,8 @@
             <td><?php echo $mostrar['ubicacion']; ?></td>
             <td><?php echo $mostrar['sexo']; ?></td>
             <td>
-                <button class="btn btn-sm btn-success">
-                    Cambiar password
+                <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalResetPassword" onclick="asignarIdReset('<?php echo $mostrar['id_usuario']; ?>')">
+                    <span class="fas fa-retweet"></span>
                 </button>
             </td>
             <td>
