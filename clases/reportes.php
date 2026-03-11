@@ -23,5 +23,17 @@ class Reportes extends Conexion {
 
         return $respuesta ? 1 : 0;
     }
+
+    public function eliminarReporteCliente($idReporte) {
+        $conexion = Conexion::conectar();
+        
+        $sql = "DELETE FROM t_tickets WHERE id_ticket = ?";
+        $query = $conexion->prepare($sql);
+        $query->bind_param("i", $idReporte);
+        $respuesta = $query->execute();
+        $query->close();
+
+        return $respuesta ? 1 : 0;
+    }
 }
 ?>

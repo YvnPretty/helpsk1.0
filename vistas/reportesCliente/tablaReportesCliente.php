@@ -13,20 +13,50 @@
         </tr>
     </thead>
     <tbody>
+        <?php 
+        session_start();
+        require_once "../../clases/conexion.php";
+        $conexion = Conexion::conectar();
+        $idUsuario = $_SESSION['id_usuario'];
+        $sql = "SELECT 
+                    t.id_ticket,
+                    CONCAT(p.nombre, ' ', p.paterno, ' ', p.materno) AS persona,
+                    CONCAT(d.tipo, ' ', d.marca) AS dispositivo,
+                    t.fecha_creacion,
+                    t.descripcion_problema,
+                    t.estado,
+                    t.solucion
+                FROM t_tickets t
+                INNER JOIN t_dispositivos d ON t.id_dispositivo = d.id_dispositivo
+                INNER JOIN t_persona p ON t.id_persona = p.id_persona
+                WHERE t.id_persona = (SELECT id_persona FROM t_usuarios WHERE id_usuario = '$idUsuario')";
+        $result = mysqli_query($conexion, $sql);
+        $contador = 1;
+        while($mostrar = mysqli_fetch_array($result)) {
+        ?>
         <tr>
-            <td>1</td>
-            <td>help desk demo</td>
-            <td>Laptop</td>
-            <td>2021-08-13 14:17:22</td>
-            <td>Mi laptop se calienta mucho y se apaga despues</td>
-            <td><span class="badge badge-success">Abierto</span></td>
-            <td><span class="bg-primary text-white px-2 py-1 rounded d-inline-block">Vamos a cambiar pasta termica y limpiar el equipo</span></td>
+            <td><?php echo $contador++; ?></td>
+            <td><?php echo $mostrar['persona']; ?></td>
+            <td><?php echo $mostrar['dispositivo']; ?></td>
+            <td><?php echo $mostrar['fecha_creacion']; ?></td>
+            <td><?php echo $mostrar['descripcion_problema']; ?></td>
             <td>
-                <button class="btn btn-primary btn-sm">
-                    Eliminar
+                <?php 
+                if($mostrar['estado'] == 'abierto') {
+                    echo '<span class="badge badge-info">Abierto</span>';
+                } else {
+                    echo '<span class="badge badge-success">Cerrado</span>';
+                }
+                ?>
+            </td>
+            <td><?php echo $mostrar['solucion']; ?></td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="eliminarReporteCliente(<?php echo $mostrar['id_ticket']; ?>)">
+                    <span class="fas fa-trash-alt"></span> Eliminar
                 </button>
             </td>
         </tr>
+        <?php } ?>
     </tbody>
 </table>
 
