@@ -9,7 +9,9 @@ class Usuarios extends Conexion {
 
         $sql = "SELECT * 
                 FROM t_usuarios 
-                WHERE usuario = '$usuario' AND password = '$passwordExistente'";
+                WHERE usuario = '$usuario' 
+                AND password = '$passwordExistente'
+                AND activo = 1";
         $result = mysqli_query($conexion, $sql);
         $datos = mysqli_fetch_array($result);
 
@@ -22,7 +24,7 @@ class Usuarios extends Conexion {
 
             return 1; // Login exitoso
         } else {
-            return 0; // Credenciales incorrectas
+            return 0; // Credenciales incorrectas o usuario inactivo
         }
     }
 
@@ -132,6 +134,18 @@ class Usuarios extends Conexion {
         
         $query = $conexion->prepare($sql);
         $query->bind_param("si", $datos['password'], $datos['idUsuario']);
+        $respuesta = $query->execute();
+        $query->close();
+
+        return $respuesta ? 1 : 0;
+    }
+
+    public function cambioEstatusUsuario($datos) {
+        $conexion = Conexion::conectar();
+        $sql = "UPDATE t_usuarios SET activo = ? WHERE id_usuario = ?";
+        
+        $query = $conexion->prepare($sql);
+        $query->bind_param("ii", $datos['estatus'], $datos['idUsuario']);
         $respuesta = $query->execute();
         $query->close();
 

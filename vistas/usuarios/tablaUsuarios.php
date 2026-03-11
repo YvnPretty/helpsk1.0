@@ -29,7 +29,8 @@
                     u.usuario, 
                     u.ubicacion, 
                     p.sexo,
-                    u.id_usuario 
+                    u.id_usuario,
+                    u.activo 
                 FROM t_usuarios u 
                 INNER JOIN t_persona p ON u.id_persona = p.id_persona";
         
@@ -52,9 +53,15 @@
                 </button>
             </td>
             <td>
-                <button class="btn btn-sm btn-info">
-                    Activo
-                </button>
+                <?php if ($mostrar['activo'] == 1) { ?>
+                    <button class="btn btn-sm btn-info" onclick="cambioEstatusUsuario(<?php echo $mostrar['id_usuario']; ?>, 0)">
+                        <span class="fas fa-power-off"></span> Activo
+                    </button>
+                <?php } else { ?>
+                    <button class="btn btn-sm btn-danger" onclick="cambioEstatusUsuario(<?php echo $mostrar['id_usuario']; ?>, 1)">
+                        <span class="fas fa-power-off"></span> Inactivo
+                    </button>
+                <?php } ?>
             </td>
             <td>
                 <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalActualizarUsuarios">

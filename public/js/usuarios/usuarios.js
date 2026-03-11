@@ -66,3 +66,20 @@ function resetPassword() {
 
     return false;
 }
+
+function cambioEstatusUsuario(idUsuario, estatus) {
+    $.ajax({
+        type: "POST",
+        data: "idUsuario=" + idUsuario + "&estatus=" + estatus,
+        url: "../procesos/usuarios/crud/cambioEstatus.php",
+        success: function (respuesta) {
+            respuesta = respuesta.trim();
+            if (respuesta == 1) {
+                $('#tablaUsuarios').load('usuarios/tablaUsuarios.php');
+                Swal.fire(":D", "Estatus cambiado con éxito!", "success");
+            } else {
+                Swal.fire(":(", "Fallo al cambiar estatus!", "error");
+            }
+        }
+    });
+}
