@@ -38,8 +38,31 @@
     $(document).ready(function() {
         $('#tablaReportesAdminDataTable').DataTable({
             responsive: true,
-            lengthMenu: [10, 25, 50, 100],
-            pageLength: 10
+            lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]],
+            pageLength: 10,
+            dom: '<"row"<"col-sm-12 col-md-8"B><"col-sm-12 col-md-4"f>>rt<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+            buttons: [
+                {
+                    extend: 'copyHtml5',
+                    text: '<i class="fas fa-copy"></i> Copiar',
+                    className: 'btn btn-outline-info'
+                },
+                {
+                    extend: 'csvHtml5',
+                    text: '<i class="fas fa-file-csv"></i> CSV',
+                    className: 'btn btn-primary'
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-file-excel"></i> Excel',
+                    className: 'btn btn-outline-success'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i> PDF',
+                    className: 'btn btn-outline-danger'
+                }
+            ]
         });
     });
 </script>
