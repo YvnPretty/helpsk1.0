@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap4.min.css">
     
-    <!-- Estilos de Plantilla Base según captura del video -->
+   
     <link rel="stylesheet" href="plantilla.css">
 </head>
 <body>
@@ -28,7 +28,9 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="inicio.php">Help - Desk</a>
+                    <a class="navbar-brand" href="inicio.php">
+                        <img src="../public/img/logo.png" alt="Help-Desk" style="width: 80px;">
+                    </a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="inicio.php">Inicio</a>

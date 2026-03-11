@@ -55,11 +55,11 @@
             <td>
                 <?php if ($mostrar['activo'] == 1) { ?>
                     <button class="btn btn-sm btn-info" onclick="cambioEstatusUsuario(<?php echo $mostrar['id_usuario']; ?>, 0)">
-                        <span class="fas fa-power-off"></span> Activo
+                        <span class="fas fa-power-off"></span> On
                     </button>
                 <?php } else { ?>
-                    <button class="btn btn-sm btn-danger" onclick="cambioEstatusUsuario(<?php echo $mostrar['id_usuario']; ?>, 1)">
-                        <span class="fas fa-power-off"></span> Inactivo
+                    <button class="btn btn-sm btn-light" onclick="cambioEstatusUsuario(<?php echo $mostrar['id_usuario']; ?>, 1)">
+                        <span class="fas fa-power-off"></span> Off
                     </button>
                 <?php } ?>
             </td>

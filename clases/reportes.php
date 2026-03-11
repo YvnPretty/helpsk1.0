@@ -1,37 +1,27 @@
 <?php
-require_once "conexion.php";
+
+require_once __DIR__ . "/conexion.php";
 
 class Reportes extends Conexion {
-    public function obtenerSolucion($idReporte) {
+
+    public function agregarReporte($datos) {
         $conexion = Conexion::conectar();
         
-        $sql = "SELECT solucion, estado FROM t_tickets WHERE id_ticket = '$idReporte'";
-        $respuesta = mysqli_query($conexion, $sql);
-        $reporte = mysqli_fetch_array($respuesta);
+        // Buscamos quién es la persona que está levantando el ticket
+        $idUsuario = $datos['idUsuario'];
+        $sqlPersona = "SELECT id_persona FROM t_usuarios WHERE id_usuario = '$idUsuario'";
+        $resultPersona = mysqli_query($conexion, $sqlPersona);
+        $idPersona = mysqli_fetch_row($resultPersona)[0];
 
-        $datos = array(
-            "idReporte" => $idReporte,
-            "solucion" => $reporte['solucion'],
-            "estado" => $reporte['estado']
-        );
-
-        return $datos;
-    }
-
-    public function actualizarSolucion($datos) {
-        $conexion = Conexion::conectar();
+        $sql = "INSERT INTO t_tickets (id_dispositivo, id_persona, descripcion_problema, estado) 
+                VALUES (?, ?, ?, 'abierto')";
         
-        $sql = "UPDATE t_tickets 
-                SET solucion = ?, 
-                    estado = ? 
-                WHERE id_ticket = ?";
-                
         $query = $conexion->prepare($sql);
-        $query->bind_param('ssi', $datos['solucion'], $datos['estado'], $datos['idReporte']);
+        $query->bind_param("iis", $datos['idDispositivo'], $idPersona, $datos['descripcionProblema']);
         $respuesta = $query->execute();
         $query->close();
-        
-        return $respuesta;
+
+        return $respuesta ? 1 : 0;
     }
 }
 ?>
