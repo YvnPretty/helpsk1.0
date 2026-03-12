@@ -8,7 +8,7 @@
             <th>Descripcion</th>
             <th>Estatus</th>
             <!-- Las columnas de abajo las podemos ocultar u organizar para que DataTables las mande debajo al expandir -->
-            <th class="none">Solucion</th>
+            <th>Solucion</th>
             <th class="none">Eliminar</th>
         </tr>
     </thead>
