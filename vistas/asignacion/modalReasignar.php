@@ -13,10 +13,20 @@
           <div class="row">
             <div class="col-sm-6">
               <label>A persona</label>
+              <?php 
+                require_once __DIR__ . "/../../clases/conexion.php";
+                $con = new Conexion();
+                $conexion = $con->conectar();
+                $sql = "SELECT id_persona, nombre, paterno, materno FROM t_persona";
+                $result = mysqli_query($conexion, $sql);
+              ?>
               <select name="idPersonaU" id="idPersonaU" class="form-control" required>
                   <option value="">Selecciona una persona</option>
-                  <option value="1">help desk demo</option>
-                  <option value="2">lopez martinez juan</option>
+                  <?php while($mostrar = mysqli_fetch_array($result)) { ?>
+                    <option value="<?php echo $mostrar['id_persona']; ?>">
+                        <?php echo $mostrar['nombre'] . ' ' . $mostrar['paterno'] . ' ' . $mostrar['materno']; ?>
+                    </option>
+                  <?php } ?>
               </select>
             </div>
             <div class="col-sm-6">

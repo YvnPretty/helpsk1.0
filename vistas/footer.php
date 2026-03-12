@@ -20,6 +20,5 @@
     <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
     <!-- Scripts específicos -->
-    <script src="../public/js/usuarios/login.js"></script>
 </body>
 </html>

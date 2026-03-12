@@ -73,6 +73,48 @@ class Asignacion extends Conexion {
         
         return $respuesta ? 1 : 0;
     }
+
+    public function obtenerAsignacion($idDispositivo) {
+        $conexion = Conexion::conectar();
+
+        $sql = "SELECT 
+                    id_dispositivo,
+                    id_persona,
+                    tipo,
+                    marca,
+                    modelo,
+                    color,
+                    descripcion,
+                    memoria,
+                    disco_duro,
+                    procesador
+                FROM t_dispositivos
+                WHERE id_dispositivo = ?";
+
+        $query = $conexion->prepare($sql);
+        $query->bind_param("i", $idDispositivo);
+        $query->execute();
+        $resultado = $query->get_result();
+        $datos = $resultado->fetch_assoc();
+        $query->close();
+
+        if (!$datos) {
+            return null;
+        }
+
+        return array(
+            "idDispositivo" => $datos['id_dispositivo'],
+            "idPersona" => $datos['id_persona'],
+            "tipo" => $datos['tipo'],
+            "marca" => $datos['marca'],
+            "modelo" => $datos['modelo'],
+            "color" => $datos['color'],
+            "descripcion" => $datos['descripcion'],
+            "memoria" => $datos['memoria'],
+            "discoDuro" => $datos['disco_duro'],
+            "procesador" => $datos['procesador']
+        );
+    }
 }
 
 ?>

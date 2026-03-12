@@ -52,13 +52,30 @@ function eliminarAsignacion(idDispositivo) {
 }
 
 function obtenerDatosAsignacion(idDispositivo) {
-    // Al dar clic en Reasignar, establecemos el ID en el form oculto 
-    // y simulamos que cargó la info.
-    // Falta luego el backend para cargar select real, usando ids harcodeados de prueba:
-    $('#idAsignacionU').val(idDispositivo);
+    $.ajax({
+        type: "POST",
+        data: "idDispositivo=" + idDispositivo,
+        url: "../procesos/asignacion/obtener/obtenerAsignacion.php",
+        success: function (respuesta) {
+            respuesta = jQuery.parseJSON(respuesta);
 
-    // Dejaremos los campos vacíos hasta conectar BD completa, 
-    // pero el ID ya viaja para permitir el UPDATE
+            if (!respuesta) {
+                Swal.fire(":(", "No se encontró la asignación seleccionada", "error");
+                return;
+            }
+
+            $('#idAsignacionU').val(respuesta['idDispositivo']);
+            $('#idPersonaU').val(respuesta['idPersona']);
+            $('#idTipoEquipoU').val(respuesta['tipo']);
+            $('#marcaU').val(respuesta['marca']);
+            $('#modeloU').val(respuesta['modelo']);
+            $('#colorU').val(respuesta['color']);
+            $('#descripcionU').val(respuesta['descripcion']);
+            $('#memoriaU').val(respuesta['memoria']);
+            $('#discoDuroU').val(respuesta['discoDuro']);
+            $('#procesadorU').val(respuesta['procesador']);
+        }
+    });
 }
 
 function actualizaAsignacion() {

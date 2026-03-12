@@ -10,7 +10,7 @@
                 persona.materno as maternoPersona,
                 reporte.id_dispositivo as idDispositivo,
                 dispositivo.tipo as nombreDispositivo,
-                reporte.fecha as fechaReporte,
+                reporte.fecha_creacion as fechaReporte,
                 reporte.descripcion_problema as problema,
                 reporte.estado as estatus,
                 reporte.solucion as solucion
@@ -20,7 +20,7 @@
                 t_persona AS persona ON reporte.id_persona = persona.id_persona
                     INNER JOIN
                 t_dispositivos AS dispositivo ON reporte.id_dispositivo = dispositivo.id_dispositivo
-            ORDER BY reporte.fecha DESC";
+            ORDER BY reporte.fecha_creacion DESC";
     $result = mysqli_query($conexion, $sql);
 ?>
 
