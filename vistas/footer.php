@@ -1,4 +1,4 @@
-    </div> <!-- Fin del container-fluid content-page -->
+
 
     <!-- Dependencias JS -->
     <script src="../public/jquery/jquery.min.js"></script>

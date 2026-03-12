@@ -24,21 +24,23 @@ $correo = isset($datos['correo']) ? $datos['correo'] : "";
 $edad = isset($datos['fecha_nacimiento']) ? $datos['fecha_nacimiento'] : "";
 ?>
 
-<div class="container pb-3 pt-3">
-    <h1 style="font-size: 2.5rem; color: #333;" class="mb-5">Bienvenido <?php echo strtolower($rol); ?></h1>
-    
-    <div class="row" style="font-size: 14px; color: #444;">
-        <div class="col-md-4">
-            <p>Apellido paterno: <?php echo $paterno; ?></p>
-            <p>Telefono: <?php echo $telefono; ?></p>
-        </div>
-        <div class="col-md-4">
-            <p>Apellido materno: <?php echo $materno; ?></p>
-            <p>Correo: <?php echo $correo; ?></p>
-        </div>
-        <div class="col-md-4">
-            <p>Nombre: <?php echo $nombre; ?></p>
-            <p>Edad: <?php echo $edad; ?></p>
+<div class="container-fluid mt-4 content-page">
+    <div class="container pb-3 pt-3">
+        <h1 style="font-size: 2.5rem; color: #333;" class="mb-5">Bienvenido <?php echo strtolower($rol); ?></h1>
+        
+        <div class="row" style="font-size: 14px; color: #444;">
+            <div class="col-md-4">
+                <p>Apellido paterno: <?php echo $paterno; ?></p>
+                <p>Telefono: <?php echo $telefono; ?></p>
+            </div>
+            <div class="col-md-4">
+                <p>Apellido materno: <?php echo $materno; ?></p>
+                <p>Correo: <?php echo $correo; ?></p>
+            </div>
+            <div class="col-md-4">
+                <p>Nombre: <?php echo $nombre; ?></p>
+                <p>Edad: <?php echo $edad; ?></p>
+            </div>
         </div>
     </div>
 </div>

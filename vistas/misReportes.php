@@ -1,14 +1,16 @@
 <?php include "header.php"; ?>
 
-<div class="card mt-4">
-    <div class="card-body">
-        <h2 class="card-title">Reportes de cliente</h2>
-        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalCrearReporte">
-            Crear Reporte
-        </button>
+<div class="container-fluid mt-4 content-page">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h2 class="card-title">Reportes de cliente</h2>
+            <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#modalCrearReporte">
+                Crear Reporte
+            </button>
 
-        <div class="table-responsive" id="tablaReportesClienteLoad">
-            <!-- La tabla general de reportes (cliente) carga acá -->
+            <div class="table-responsive" id="tablaReportesClienteLoad">
+                <!-- La tabla general de reportes (cliente) carga acá -->
+            </div>
         </div>
     </div>
 </div>
