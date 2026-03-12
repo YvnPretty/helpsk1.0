@@ -24,12 +24,44 @@ class Reportes extends Conexion {
         return $respuesta ? 1 : 0;
     }
 
-    public function eliminarReporteCliente($idReporte) {
+    public function eliminarReporte($idReporte) {
         $conexion = Conexion::conectar();
         
         $sql = "DELETE FROM t_tickets WHERE id_ticket = ?";
         $query = $conexion->prepare($sql);
         $query->bind_param("i", $idReporte);
+        $respuesta = $query->execute();
+        $query->close();
+
+        return $respuesta ? 1 : 0;
+    }
+
+    public function eliminarReporteCliente($idReporte) {
+        return $this->eliminarReporte($idReporte);
+    }
+
+    public function obtenerSolucion($idReporte) {
+        $conexion = Conexion::conectar();
+        
+        $sql = "SELECT id_ticket, solucion, estado FROM t_tickets WHERE id_ticket = '$idReporte'";
+        $result = mysqli_query($conexion, $sql);
+        $datos = mysqli_fetch_array($result);
+
+        $respuesta = array(
+            "idReporte" => $datos['id_ticket'],
+            "solucion" => $datos['solucion'],
+            "estado" => $datos['estado']
+        );
+
+        return $respuesta;
+    }
+
+    public function actualizarSolucion($datos) {
+        $conexion = Conexion::conectar();
+        
+        $sql = "UPDATE t_tickets SET solucion = ?, estado = ? WHERE id_ticket = ?";
+        $query = $conexion->prepare($sql);
+        $query->bind_param("ssi", $datos['solucion'], $datos['estado'], $datos['idReporte']);
         $respuesta = $query->execute();
         $query->close();
 
