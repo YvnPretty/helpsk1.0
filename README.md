@@ -32,4 +32,24 @@ Inicio de sesión.
 **Frontend:** HTML5, CSS3, Bootstrap 4, jQuery
 **Base de Datos:** MariaDB/MySQL
 
+---
+
+## 🚀 Mejoras Premium (Actualización Marzo 2026)
+
+Se han implementado una serie de mejoras críticas para llevar el sistema a un nivel profesional y estético superior:
+
+### 🛡️ Seguridad y Estabilidad
+- **Control de Sesiones:** Implementación de validación de seguridad en todas las vistas internas, impidiendo el acceso no autorizado mediante URL directa.
+- **Corrección de Rutas:** Optimización de la lógica de inclusión de archivos PHP (`require_once`) para asegurar el funcionamiento correcto de los modales y scripts en todos los entornos.
+- **Fix de Asignación:** Reparación del módulo de asignación de dispositivos, habilitando la interactividad completa de los formularios y tablas.
+
+### 💎 Diseño de Vanguardia (Clear Crystal)
+- **Efecto Glassmorphism:** Interfaz moderna con paneles traslúcidos y desenfoque de fondo (`backdrop-filter`) para una apariencia de cristal premium.
+- **Fondo Futurista:** Integración de un fondo de alta resolución con temática de circuitos de neón que refuerza la identidad tecnológica del HelpDesk.
+- **Arquitectura Visual:** Reestructuración de contenedores para garantizar que los modales floten correctamente sobre la interfaz sin bloqueos visuales.
+
+### 📊 Experiencia de Usuario (UX)
+- **Reportes Optimizados:** Visibilidad inmediata de las soluciones técnicas en la tabla de reportes del cliente.
+- **Exportación Total:** Habilitación de funciones nativas para exportar datos en formatos **PDF, Excel y CSV**.
+
 
