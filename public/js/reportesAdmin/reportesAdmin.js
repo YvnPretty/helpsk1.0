@@ -37,5 +37,38 @@ function agregarSolucion() {
 }
 
 function eliminarReporteAdmin(idReporte) {
-    alert("¡Borrando reporte! (Backend en desarrollo...)");
+    Swal.fire({
+        title: '¿Estas seguro de eliminar este reporte?',
+        text: "Una vez eliminado, no podras recuperarlo!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminarlo!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                type: "POST",
+                data: "idReporte=" + idReporte,
+                url: "../procesos/reportesAdmin/eliminarReporteAdmin.php",
+                success: function (respuesta) {
+                    respuesta = respuesta.trim();
+                    if (respuesta == 1) {
+                        $('#tablaReportesAdmin').load('reportes/tablaReportesAdmin.php');
+                        Swal.fire(
+                            'Eliminado!',
+                            'El reporte ha sido eliminado.',
+                            'success'
+                        );
+                    } else {
+                        Swal.fire(
+                            'Error!',
+                            'Fallo al eliminar: ' + respuesta,
+                            'error'
+                        );
+                    }
+                }
+            });
+        }
+    });
 }
