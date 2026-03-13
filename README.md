@@ -1,55 +1,59 @@
-# Sistema HelpDesk v1.0 
+# Sistema HelpDesk v1.0
 
-Bienvenido al repositorio del Sistema de Mesa de Ayuda (HelpDesk). Este proyecto está siendo desarrollado con PHP y MySQL.
+## Descripción del Proyecto
+El Sistema de Mesa de Ayuda (HelpDesk) es una plataforma integral diseñada para la gestión técnica y operativa de activos digitales y soporte al usuario en entornos corporativos. Su objetivo principal es centralizar y optimizar la atención de solicitudes de asistencia técnica, asegurando la trazabilidad y eficiencia en la resolución de incidencias.
 
-// Justificación del Proyecto
-Este sistema está pensado para negocios u oficinas donde los usuarios requieren soporte técnico constante para sus equipos de cómputo o dispositivos digitales. 
+## Justificación
+La implementación de este sistema responde a la necesidad de digitalizar procesos que tradicionalmente se gestionan de manera manual o descentralizada, lo cual genera:
+*   Inconsistencia en el seguimiento de reportes técnicos.
+*   Dificultad en el control de inventario de hardware.
+*   Carencia de métricas de rendimiento para el departamento de sistemas.
+*   Falta de visibilidad para el usuario final sobre el estado de sus solicitudes.
 
-Actualmente, muchos de estos procesos se llevan en papel, lo que ocasiona:
-Pérdida de reportes.
-Olvido de tareas por parte de sistemas.
-Dificultad para generar reportes de rendimiento o justifyicar el tiempo de trabajo.
-Falta de seguimiento para el cliente.
+## Reglas de Negocio
+Para asegurar la integridad de la información y el flujo correcto de los procesos, el sistema se rige por las siguientes directrices:
 
-// Características Principales
-El sistema contará con dos tipos de perfiles principales:
+### Gestión de Identidad y Acceso
+1.  **Perfiles de Usuario:** El sistema reconoce estrictamente dos roles: Administrador (Soporte Técnico) y Cliente (Usuario Final).
+2.  **Persistencia de Usuarios:** Un usuario registrado que posea historial de tickets o asignaciones no podrá ser eliminado de la base de datos para preservar la integridad referencial; en su lugar, el registro deberá ser inhabilitado.
+3.  **Seguridad de Credenciales:** Todas las contraseñas deben ser procesadas y almacenadas utilizando el algoritmo de encriptación SHA1.
 
-Administrador (Soporte Técnico)
-Inicio de sesión seguro.
-**Gestión de Usuarios:** Crear, habilitar o inhabilitar (no eliminar si ya tienen historial).
-**Asignación de Dispositivos:** Asignar hardware (PC, laptops, monitores, etc.) a los usuarios, detallando sus características (RAM, Disco Duro) e incluso adjuntando fotografías para auditorías.
-**Gestión de Tickets:** Revisar, dar solución y cerrar los reportes levantados por los clientes.
+### Administración de Activos e Incidencias
+4.  **Asignación de Dispositivos:** Todo hardware debe estar vinculado obligatoriamente a una persona registrada previamente en el catálogo de personal.
+5.  **Flujo de Tickets:** Únicamente los usuarios con rol "Cliente" están facultados para la creación de nuevos reportes de soporte.
+6.  **Resolución y Cierre:** La autoridad para redactar diagnósticos técnicos, asignar soluciones y realizar el cierre formal de un ticket reside exclusivamente en el rol "Administrador".
+7.  **Trazabilidad Temporal:** Cada registro de usuario, asignación o ticket debe incluir una marca de tiempo automática de inserción para fines de auditoría.
 
-Cliente (Usuario Final)
-Inicio de sesión.
-**Perfil:** Ver y actualizar su información personal de contacto y ubicación (oficina/piso).
-**Mis Dispositivos:** Visualizar el equipo de cómputo que tiene a su cargo.
-**Soporte Técnico:** Levantar nuevos tickets de soporte técnico seleccionando un dispositivo específico o la opción "Otros" (para pedir hardware nuevo, por ejemplo).
-**Historial:** Hacer seguimiento del estado de sus tickets (Abierto/Cerrado) y exportar sus reportes en formato PDF o Excel.
+## Características Técnicas
+### Perfil de Administrador
+*   Gestión centralizada de usuarios y roles.
+*   Inventario y asignación detallada de hardware (especificaciones de CPU, RAM, Almacenamiento).
+*   Monitoreo global de tickets, administración de soluciones y control de estados.
 
-// Tecnologías a utilizar
-**Backend:** PHP
-**Frontend:** HTML5, CSS3, Bootstrap 4, jQuery
-**Base de Datos:** MariaDB/MySQL
+### Perfil de Cliente
+*   Consulta de dispositivos asignados bajo su responsabilidad.
+*   Apertura de tickets de soporte técnico asociados a un activo específico.
+*   Consulta de historial de servicios y exportación de reportes en formatos PDF y Excel.
+
+## Stack Tecnológico
+*   **Backend:** PHP
+*   **Frontend:** HTML5, CSS3, Bootstrap 4, jQuery
+*   **Gestor de Base de Datos:** MariaDB/MySQL
 
 ---
 
-## Mejoras del Proyecto (Marzo 2026)
-
-Se han implementado una serie de mejoras críticas para llevar el sistema a un nivel profesional y estético superior:
+## Mejoras Implementadas (Marzo 2026)
 
 ### Seguridad y Estabilidad
-- **Control de Sesiones:** Implementación de validación de seguridad en todas las vistas internas, impidiendo el acceso no autorizado mediante URL directa.
-- **Corrección de Rutas:** Optimización de la lógica de inclusión de archivos PHP (`require_once`) para asegurar el funcionamiento correcto de los modales y scripts en todos los entornos.
-- **Fix de Asignación:** Reparación del módulo de asignación de dispositivos, habilitando la interactividad completa de los formularios y tablas.
+*   **Control de Acceso:** Validación de sesiones en todas las interfaces internas para prevenir accesos no autorizados mediante inyección de URL.
+*   **Optimización de Arquitectura:** Reestructuración de la lógica de inclusión de archivos y rutas relativas para garantizar la estabilidad de los componentes modales.
 
-### Diseño (Clear Crystal)
-- **Efecto Glassmorphism:** Interfaz moderna con paneles traslúcidos y desenfoque de fondo (`backdrop-filter`) para una apariencia de cristal premium.
-- **Fondo Futurista:** Integración de un fondo de alta resolución con temática de circuitos de neón que refuerza la identidad tecnológica del HelpDesk.
-- **Arquitectura Visual:** Reestructuración de contenedores para garantizar que los modales floten correctamente sobre la interfaz sin bloqueos visuales.
+### Interfaz de Usuario (UI)
+*   **Diseño Crystal:** Implementación de interfaces traslúcidas de alta gama con efectos de desenfoque de capa.
+*   **Adaptabilidad:** Optimización de contenedores visuales para asegurar la correcta superposición de elementos interactivos.
 
-### Experiencia de Usuario (UX)
-- **Reportes Optimizados:** Visibilidad inmediata de las soluciones técnicas en la tabla de reportes del cliente.
-- **Exportación Total:** Habilitación de funciones nativas para exportar datos en formatos **PDF, Excel y CSV**.
+### Reportes y Exportación
+*   **Toma de Decisiones:** Habilitación de visibilidad de soluciones técnicas para el usuario final.
+*   **Interoperabilidad:** Integración de bibliotecas para la exportación de datos a PDF, Excel y CSV de forma nativa.
 
 
