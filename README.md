@@ -1,4 +1,17 @@
-# Sistema HelpDesk v1.0
+<p align="center">
+  <img src="public/img/logo.png" alt="HelpDesk Logo" width="150">
+</p>
+
+<h1 align="center">HelpDesk v1.0</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap">
+  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+</p>
+
+---
 
 ## Descripción del Proyecto
 El Sistema de Mesa de Ayuda (HelpDesk) es una plataforma integral diseñada para la gestión técnica y operativa de activos digitales y soporte al usuario en entornos corporativos. Su objetivo principal es centralizar y optimizar la atención de solicitudes de asistencia técnica, asegurando la trazabilidad y eficiencia en la resolución de incidencias.
@@ -9,6 +22,8 @@ La implementación de este sistema responde a la necesidad de digitalizar proces
 *   Dificultad en el control de inventario de hardware.
 *   Carencia de métricas de rendimiento para el departamento de sistemas.
 *   Falta de visibilidad para el usuario final sobre el estado de sus solicitudes.
+
+---
 
 ## Reglas de Negocio
 Para asegurar la integridad de la información y el flujo correcto de los procesos, el sistema se rige por las siguientes directrices:
@@ -24,7 +39,10 @@ Para asegurar la integridad de la información y el flujo correcto de los proces
 6.  **Resolución y Cierre:** La autoridad para redactar diagnósticos técnicos, asignar soluciones y realizar el cierre formal de un ticket reside exclusivamente en el rol "Administrador".
 7.  **Trazabilidad Temporal:** Cada registro de usuario, asignación o ticket debe incluir una marca de tiempo automática de inserción para fines de auditoría.
 
+---
+
 ## Características Técnicas
+
 ### Perfil de Administrador
 *   Gestión centralizada de usuarios y roles.
 *   Inventario y asignación detallada de hardware (especificaciones de CPU, RAM, Almacenamiento).
@@ -33,7 +51,9 @@ Para asegurar la integridad de la información y el flujo correcto de los proces
 ### Perfil de Cliente
 *   Consulta de dispositivos asignados bajo su responsabilidad.
 *   Apertura de tickets de soporte técnico asociados a un activo específico.
-*   Consulta de historial de servicios y exportación de reportes en formatos PDF y Excel.
+*   Consulta de historial de servicios y exportación de reportes en formatos PDF and Excel.
+
+---
 
 ## Stack Tecnológico
 *   **Backend:** PHP
@@ -42,18 +62,28 @@ Para asegurar la integridad de la información y el flujo correcto de los proces
 
 ---
 
-## Mejoras Implementadas (Marzo 2026)
+## Mejoras Realizadas (Marzo 2026)
 
 ### Seguridad y Estabilidad
 *   **Control de Acceso:** Validación de sesiones en todas las interfaces internas para prevenir accesos no autorizados mediante inyección de URL.
 *   **Optimización de Arquitectura:** Reestructuración de la lógica de inclusión de archivos y rutas relativas para garantizar la estabilidad de los componentes modales.
 
 ### Interfaz de Usuario (UI)
-*   **Diseño Crystal:** Implementación de interfaces traslúcidas de alta gama con efectos de desenfoque de capa.
+*   **Diseño Crystal:** Implementación de interfaces traslúcidas de alta gama con efectos de desenfoque de capa (**Glassmorphism**).
 *   **Adaptabilidad:** Optimización de contenedores visuales para asegurar la correcta superposición de elementos interactivos.
 
-### Reportes y Exportación
-*   **Toma de Decisiones:** Habilitación de visibilidad de soluciones técnicas para el usuario final.
-*   **Interoperabilidad:** Integración de bibliotecas para la exportación de datos a PDF, Excel y CSV de forma nativa.
+---
 
+## Arquitectura de Datos
+![Database Diagram](diagramas/bd1.png)
 
+---
+
+## Instalación y Setup (Local)
+1.  **Requisitos:** PHP 8.x+, MySQL/MariaDB.
+2.  **Base de Datos:** Importar el archivo `bd/helpdesk.sql`.
+3.  **Configuración:** Ajustar credenciales en `clases/conexion.php`.
+4.  **Ejecución:** `php -S localhost:8000`
+
+---
+<p align="center">Réplica y personalización por <b>prettyvatt00</b></p>

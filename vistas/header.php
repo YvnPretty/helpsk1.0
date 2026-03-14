@@ -34,7 +34,8 @@ if (!isset($_SESSION['usuario'])) {
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="inicio.php">
+                    
+                <a class="navbar-brand" href="inicio.php">
                         <img src="../public/img/logo.png" alt="Help-Desk" style="width: 80px;">
                     </a>
                 </li>
