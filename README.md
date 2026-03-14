@@ -41,17 +41,22 @@ Para asegurar la integridad de la información y el flujo correcto de los proces
 
 ---
 
-## Características Técnicas
+## Casos de Uso
 
-### Perfil de Administrador
-*   Gestión centralizada de usuarios y roles.
-*   Inventario y asignación detallada de hardware (especificaciones de CPU, RAM, Almacenamiento).
-*   Monitoreo global de tickets, administración de soluciones y control de estados.
+### Administrador (Soporte Técnico)
+*   Gestión de Usuarios: Crear, editar e inhabilitar cuentas de acceso al sistema.
+*   Gestión de Personal: Registrar a los empleados de la organización para futuras asignaciones de equipo.
+*   Gestión de Inventario: Definir tipos de hardware y sus especificaciones técnicas.
+*   Asignación de Dispositivos: Vincular hardware específico a un miembro del personal.
+*   Monitoreo Global de Tickets: Visualizar todos los reportes generados en el sistema.
+*   Diagnóstico Técnico: Redactar soluciones y hallazgos técnicos para cada ticket.
+*   Cierre de Tickets: Finalizar el ciclo de vida de un reporte una vez resuelto.
 
-### Perfil de Cliente
-*   Consulta de dispositivos asignados bajo su responsabilidad.
-*   Apertura de tickets de soporte técnico asociados a un activo específico.
-*   Consulta de historial de servicios y exportación de reportes en formatos PDF and Excel.
+### Cliente (Usuario Final)
+*   Consulta de Activos: Visualizar la lista de dispositivos asignados bajo su resguardo.
+*   Apertura de Tickets: Crear nuevos reportes de soporte técnico vinculados a sus dispositivos.
+*   Seguimiento de Reportes: Consultar el estado actual y el historial de sus solicitudes de servicio.
+*   Exportación de Reportes: Generar documentos en formato PDF o Excel con el historial de sus servicios.
 
 ---
 
