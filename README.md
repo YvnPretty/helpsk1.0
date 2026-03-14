@@ -86,4 +86,4 @@ Para asegurar la integridad de la información y el flujo correcto de los proces
 4.  **Ejecución:** `php -S localhost:8000`
 
 ---
-<p align="center">Réplica y personalización por <b>prettyvatt00</b></p>
+<p align="center">Réplica y personalización por <b>prettyvatt00</b> | Creador Original: <b>Roldán Aquino Segura</b></p>
