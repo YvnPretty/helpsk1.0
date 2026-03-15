@@ -24,7 +24,7 @@ $correo = isset($datos['correo']) ? $datos['correo'] : "";
 $edad = isset($datos['fecha_nacimiento']) ? $datos['fecha_nacimiento'] : "";
 ?>
 
-<div class="container-fluid mt-4 content-page">
+
     <div class="container pb-3 pt-3">
         <h1 style="font-size: 2.5rem; color: #333;" class="mb-5">Bienvenido <?php echo strtolower($rol); ?></h1>
         

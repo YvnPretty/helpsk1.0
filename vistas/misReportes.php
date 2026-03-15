@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
 
-<div class="container-fluid mt-4 content-page">
+
     <div class="card mt-4">
         <div class="card-body">
             <h2 class="card-title">Reportes de cliente</h2>

@@ -1,6 +1,6 @@
 <?php include "header.php"; ?>
 
-<div class="container-fluid mt-4 content-page">
+
     <h2 class="mt-4">Asignación de Dispositivos</h2>
     <hr>
 
