@@ -7,12 +7,12 @@
 
 ---
 
-## 📅 Introducción
+## Introducción
 El presente documento detalla los casos de uso implementados en el sistema HelpDesk v1.0. El objetivo del sistema es centralizar la gestión de incidencias técnicas y el control de inventario de hardware dentro de una organización, asegurando la eficiencia en la respuesta y la trazabilidad de los activos.
 
 ---
 
-## 👥 Definición de Actores
+## Definición de Actores
 Para este sistema se han definido dos perfiles de usuario con permisos y responsabilidades específicas:
 
 1.  **Administrador (Soporte Técnico):** Responsable de la gestión global, mantenimiento de catálogos y resolución de incidencias.
@@ -20,7 +20,7 @@ Para este sistema se han definido dos perfiles de usuario con permisos y respons
 
 ---
 
-## 🛠️ Casos de Uso Detallados
+## Casos de Uso Detallados
 
 ### 1. Gestión de Administración (Soporte Técnico)
 
@@ -52,7 +52,7 @@ Para este sistema se han definido dos perfiles de usuario con permisos y respons
 
 ---
 
-## 🏗️ Reglas de Operación (Negocio)
+## Reglas de Operación (Negocio)
 *   **Seguridad de Acceso:** Validación de sesiones mediante SHA1 para protección de datos.
 *   **Jerarquía de Tickets:** Solo los clientes inician reportes; solo los administradores los resuelven.
 *   **Trazabilidad:** Inserción automática de marcas de tiempo en cada movimiento (auditoría).
@@ -60,5 +60,5 @@ Para este sistema se han definido dos perfiles de usuario con permisos y respons
 
 ---
 
-## 📄 Conclusión
+## Conclusión
 El sistema HelpDesk v1.0 cumple con los requisitos fundamentales para una gestión profesional de soporte, integrando seguridad, control de activos y una interface moderna bajo la arquitectura actual de la organización.
